@@ -1,172 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Satyanarayan H | Software Engineer Portfolio</title>
-    <style>
-        :root {
-            --primary: #2563eb;
-            --bg: #f8fafc;
-            --card-bg: #ffffff;
-            --text: #1e293b;
-            --text-light: #64748b;
-        }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            line-height: 1.6;
-            color: var(--text);
-            background: var(--bg);
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-        header {
-            text-align: center;
-            padding: 4rem 0 2rem;
-        }
-        h1 { margin: 0; font-size: 2.5rem; color: #0f172a; }
-        .subtitle { color: var(--text-light); font-size: 1.2rem; margin-top: 0.5rem; }
-        .contact-links { margin-top: 1.5rem; }
-        .contact-links a {
-            color: var(--primary);
-            text-decoration: none;
-            margin: 0 10px;
-            font-weight: 500;
-        }
-        section { margin-bottom: 3rem; }
-        h2 { border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem; color: #0f172a; }
-        
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-        }
-        .card {
-            background: var(--card-bg);
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-            border: 1px solid #e2e8f0;
-        }
-        .card h3 { margin-top: 0; }
-        .tech-stack {
-            font-size: 0.85rem;
-            color: var(--primary);
-            background: #eff6ff;
-            padding: 2px 8px;
-            border-radius: 4px;
-            display: inline-block;
-            margin-bottom: 0.5rem;
-        }
-        .skills-list { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-        .skill-tag {
-            background: #e2e8f0;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-        }
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --bg: #0f172a;
-                --card-bg: #1e293b;
-                --text: #f1f5f9;
-                --text-light: #94a3b8;
-                --primary: #60a5fa;
-            }
-            h2 { border-color: #334155; color: #f1f5f9; }
-            h1 { color: #f1f5f9; }
-            .card { border-color: #334155; }
-            .tech-stack { background: #1e3a8a; color: #bfdbfe; }
-            .skill-tag { background: #334155; }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <title>Satyanarayan H | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      margin: 0;
+      background: #0f172a;
+      color: #e5e7eb;
+      line-height: 1.6;
+    }
+    header {
+      background: #020617;
+      padding: 4rem 1rem 3rem;
+      text-align: center;
+      border-bottom: 1px solid #1e293b;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.8rem;
+      letter-spacing: -0.05rem;
+      color: #f8fafc;
+    }
+    header p {
+      color: #94a3b8;
+      margin: 8px 0;
+      font-size: 1.1rem;
+    }
+    header .links {
+      margin-top: 1.5rem;
+    }
+    header a {
+      color: #38bdf8;
+      text-decoration: none;
+      margin: 0 12px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    header a:hover { color: #7dd3fc; }
+    
+    section {
+      max-width: 850px;
+      margin: auto;
+      padding: 3rem 1.5rem;
+    }
+    h2 {
+      color: #38bdf8;
+      font-size: 1.5rem;
+      border-bottom: 2px solid #1e293b;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+      margin-top: 0;
+    }
+    
+    .skills { display: flex; flex-wrap: wrap; gap: 10px; }
+    .skills span {
+      background: #1e293b;
+      color: #e2e8f0;
+      padding: 6px 14px;
+      border-radius: 99px;
+      font-size: 0.9rem;
+      border: 1px solid #334155;
+    }
+
+    .project {
+      background: #1e293b40;
+      border: 1px solid #1e293b;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-radius: 12px;
+    }
+    .project h3 {
+      margin: 0 0 8px 0;
+      color: #f1f5f9;
+      font-size: 1.25rem;
+    }
+    .project em {
+      color: #38bdf8;
+      font-style: normal;
+      font-size: 0.9rem;
+      font-family: monospace;
+    }
+    .project ul {
+      padding-left: 20px;
+      color: #cbd5e1;
+      margin: 12px 0;
+    }
+    .project ul li { margin-bottom: 6px; }
+    
+    .project-link {
+      display: inline-block;
+      margin-top: 8px;
+      font-size: 0.9rem;
+      color: #38bdf8;
+      text-decoration: none;
+    }
+    .project-link:hover { text-decoration: underline; }
+
+    footer {
+      text-align: center;
+      padding: 3rem;
+      color: #64748b;
+      font-size: 0.9rem;
+      border-top: 1px solid #1e293b;
+      margin-top: 2rem;
+    }
+  </style>
 </head>
 <body>
 
-<div class="container">
-    <header>
-        <h1>Satyanarayan H</h1>
-        <p class="subtitle">Software Engineering Intern • CS Student at Manipal Institute of Technology</p>
-        <p class="subtitle">Bengaluru, India • GPA: 8.20/10</p>
-        <div class="contact-links">
-            <a href="mailto:satyanaraway@gmail.com">Email</a> •
-            <a href="LINK_TO_LINKEDIN">LinkedIn</a> •
-            <a href="LINK_TO_GITHUB">GitHub</a> •
-            <a href="LINK_TO_LEETCODE">LeetCode</a>
-        </div>
-    </header>
+<header>
+  <h1>Satyanarayan H</h1>
+  <p>Software Engineer • CS Student at Manipal Institute of Technology</p>
+  <p>Bengaluru, India</p>
+  <div class="links">
+    <a href="mailto:satyanaraway@gmail.com">Email</a>
+    <a href="https://www.linkedin.com/in/satyanarayan-h-125761245/" target="_blank">LinkedIn</a>
+    <a href="https://github.com/SatyanarayanH" target="_blank">GitHub</a>
+    <a href="https://leetcode.com/u/Chaos_Elyssianiq/" target="_blank">LeetCode</a>
+  </div>
+</header>
 
-    <section>
-        <h2>About Me</h2>
-        <p>I am a final-year B.Tech student specializing in Computer Science, with a focus on building scalable ML systems and LLM infrastructure. I have experience designing end-to-end pipelines using PyTorch and MLOps tools, and I enjoy solving algorithmic challenges in C++.</p>
-    </section>
+<section>
+  <h2>About Me</h2>
+  <p style="color: #cbd5e1; font-size: 1.05rem;">
+    I am a 3rd year Computer Science student at Manipal Institute of Technology, Bengaluru,
+    with a strong focus on machine learning, large language models, and backend engineering.
+    I enjoy building end-to-end ML systems—from data pipelines to deployment—and working on
+    performance and safety alignment for modern AI models.
+  </p>
+</section>
 
-    <section>
-        <h2>Featured Projects</h2>
-        <div class="grid">
-            <div class="card">
-                <span class="tech-stack">Python • PPO • Hugging Face</span>
-                <h3>RL Alignment Pipeline</h3>
-                <p>Engineered an end-to-end ML pipeline to optimize the trade-off between task accuracy and safety using Reinforcement Learning (PPO). Integrated modern MLOps tools (trl, peft, wandb) for QLoRA training.</p>
-                <a href="LINK_TO_REPO" style="color:var(--primary); text-decoration:none;">View Code &rarr;</a>
-            </div>
+<section>
+  <h2>Technical Skills</h2>
+  <div class="skills">
+    <span>C++</span>
+    <span>Python</span>
+    <span>Java</span>
+    <span>PyTorch</span>
+    <span>Transformers</span>
+    <span>LangChain</span>
+    <span>SQL</span>
+    <span>Docker</span>
+    <span>Git</span>
+    <span>MLOps</span>
+    <span>Data Structures & Algorithms</span>
+  </div>
+</section>
 
-            <div class="card">
-                <span class="tech-stack">PyTorch • Transformers</span>
-                <h3>LLM from Scratch (GPT-2)</h3>
-                <p>Implemented a 117M parameter transformer from scratch with 12 layers and attention heads. Developed a custom BPE tokenizer and fine-tuned the model for spam classification (95% accuracy).</p>
-                <a href="LINK_TO_REPO" style="color:var(--primary); text-decoration:none;">View Code &rarr;</a>
-            </div>
+<section>
+  <h2>Featured Projects</h2>
 
-            <div class="card">
-                <span class="tech-stack">LangGraph • ChromaDB • Groq</span>
-                <h3>Astrology RAG Agent</h3>
-                <p>Built a Retrieval-Augmented Generation agent orchestrating tool calling with Groq. Solved LangChain integration bugs to enable complex planetary data retrieval and document interpretation.</p>
-                <a href="LINK_TO_REPO" style="color:var(--primary); text-decoration:none;">View Code &rarr;</a>
-            </div>
+  <div class="project">
+    <h3>RL Alignment Pipeline</h3>
+    <em>Python • PPO • Hugging Face TRL • QLoRA</em>
+    <ul>
+      <li>Engineered an end-to-end RL pipeline to optimize the trade-off between task accuracy and safety using a multi-objective reward function.</li>
+      <li>Integrated modern MLOps tooling (TRL, PEFT, W&B) for efficient QLoRA training and experiment tracking.</li>
+    </ul>
+    <a href="GITHUB_LINK_HERE" class="project-link" target="_blank">View Code &rarr;</a>
+  </div>
 
-            <div class="card">
-                <span class="tech-stack">Scikit-learn • Pandas</span>
-                <h3>Motor Failure Prediction (DRDO)</h3>
-                <p>Predicted Remaining Useful Life (RUL) of rocket motors using sensor telemetry. Optimized a Random Forest Regressor to achieve 12.47 MAE, improving the baseline by 18%.</p>
-                <a href="LINK_TO_REPO" style="color:var(--primary); text-decoration:none;">View Code &rarr;</a>
-            </div>
-        </div>
-    </section>
+  <div class="project">
+    <h3>LLM from Scratch (GPT-2 Style)</h3>
+    <em>PyTorch • Transformers • Python</em>
+    <ul>
+      <li>Implemented a 117M-parameter GPT-2 style transformer with 12 layers and 12 attention heads.</li>
+      <li>Built the full training stack: BPE tokenizer, data pipeline, and training loop with AdamW.</li>
+    </ul>
+    <a href="https://github.com/SatyanarayanH/LLM-from-scratch" class="project-link" target="_blank">View Code &rarr;</a>
+  </div>
 
-    <section>
-        <h2>Technical Skills</h2>
-        <div class="skills-list">
-            <span class="skill-tag">C++</span>
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">Java</span>
-            <span class="skill-tag">PyTorch</span>
-            <span class="skill-tag">Transformers</span>
-            <span class="skill-tag">LangChain</span>
-            <span class="skill-tag">SQL</span>
-            <span class="skill-tag">Docker</span>
-            <span class="skill-tag">Git</span>
-            <span class="skill-tag">MLOps</span>
-        </div>
-    </section>
+  <div class="project">
+    <h3>Astrology RAG Agent</h3>
+    <em>LangGraph • ChromaDB • Groq</em>
+    <ul>
+      <li>Built a RAG agent for astrology queries by combining planetary data from Swiss Ephemeris with ChromaDB-based PDF retrieval.</li>
+      <li>Used LangGraph to orchestrate tool-calling with a Groq LLM backend.</li>
+    </ul>
+    <a href="https://github.com/SatyanarayanH/astroRAG" class="project-link" target="_blank">View Code &rarr;</a>
+  </div>
 
-    <section>
-        <h2>Achievements</h2>
-        <ul>
-            <li><strong>Goldman Sachs India CODE Challenge 2025:</strong> Ranked 602 (CS)</li>
-            <li><strong>Certifications:</strong> DeepLearning.AI Machine Learning Specialization, Google LLMs & Neural Networks</li>
-        </ul>
-    </section>
+  <div class="project">
+    <h3>Motor Failure Prediction (DRDO)</h3>
+    <em>Scikit-learn • Pandas • RandomForest</em>
+    <ul>
+      <li>Predicted Remaining Useful Life of solid rocket motors using sensor telemetry data.</li>
+      <li>Trained and tuned a Random Forest Regressor, achieving 12.47 MAE and an 18% improvement over baseline.</li>
+    </ul>
+    <a href="https://github.com/SatyanarayanH/Motor-Remaining-Useful-Life-prediction" class="project-link" target="_blank">View Code &rarr;</a>
+  </div>
 
-    <footer style="text-align:center; margin-top:4rem; color:var(--text-light); font-size:0.9rem;">
-        <p>&copy; 2025 Satyanarayan H</p>
-    </footer>
-</div>
+</section>
+
+<section>
+  <h2>Achievements</h2>
+  <ul style="color: #cbd5e1; line-height: 1.8;">
+    <li><strong>Goldman Sachs India CODE Challenge 2025:</strong> Ranked 602 (CS)</li>
+    <li><strong>Certifications:</strong> DeepLearning.AI Machine Learning Specialization, Google LLMs & Neural Networks</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Extracurricular</h2>
+  <p style="color: #cbd5e1;">
+    Represented my school in athletics, football, and badminton at inter-school competitions.
+    Sports have helped me develop discipline, teamwork, and resilience—qualities I bring into engineering work.
+  </p>
+</section>
+
+<footer>
+  &copy; 2025 Satyanarayan H • Hosted on GitHub Pages
+</footer>
 
 </body>
 </html>
