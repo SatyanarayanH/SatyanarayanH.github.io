@@ -126,10 +126,10 @@
 <section>
   <h2>About Me</h2>
   <p style="color: #cbd5e1; font-size: 1.05rem;">
-    I am a 3rd year Computer Science student at Manipal Institute of Technology, Bengaluru,
-    with a strong focus on machine learning, large language models, and backend engineering.
-    I enjoy building end-to-end ML systems—from data pipelines to deployment—and working on
-    performance and safety alignment for modern AI models.
+    I am a third-year Computer Science undergraduate at Manipal Institute of Technology, Bengaluru, with a strong focus on backend engineering, data-intensive systems, and applied machine learning.
+    I enjoy building production-grade software end to end—designing robust architectures, implementing efficient algorithms, and delivering systems with clear performance and reliability guarantees.
+    My recent work includes a universal NL-to-SQL engine that combines graph-based reasoning with deterministic fallbacks to reduce LLM hallucinations,
+    as well as implementing a GPT-2–style transformer from scratch to deeply understand model internals and training dynamics.
   </p>
 </section>
 
@@ -153,15 +153,17 @@
 <section>
   <h2>Featured Projects</h2>
 
-  <div class="project">
-    <h3>RL Alignment Pipeline</h3>
-    <em>Python • PPO • Hugging Face TRL • QLoRA</em>
+    <div class="project">
+    <h3>Universal NL-to-SQL Engine with Graph RAG</h3>
+    <em>Python • LangChain • NetworkX • ChromaDB • Llama-3</em>
     <ul>
-      <li>Engineered an end-to-end RL pipeline to optimize the trade-off between task accuracy and safety using a multi-objective reward function.</li>
-      <li>Integrated modern MLOps tooling (TRL, PEFT, W&B) for efficient QLoRA training and experiment tracking.</li>
+      <li>Engineered a reusable NL-to-SQL system with an LLM-assisted schema crawler to autonomously index unseen databases, scaling to schemas with 50+ tables.</li>
+      <li>Designed a hybrid Graph-RAG layer using NetworkX to enforce valid join paths via graph search and deterministic fallbacks, reducing SQL hallucinations by ~40% on complex multi-table queries.</li>
+      <li>Built a modular, production-grade ETL-to-inference pipeline with input validation and &lt;2s latency, resolving last-mile ambiguity through dynamic business-context injection from ChromaDB.</li>
     </ul>
     <a href="GITHUB_LINK_HERE" class="project-link" target="_blank">View Code &rarr;</a>
   </div>
+
 
   <div class="project">
     <h3>LLM from Scratch (GPT-2 Style)</h3>
