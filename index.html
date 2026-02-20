@@ -126,10 +126,10 @@
 <section>
   <h2>About Me</h2>
   <p style="color: #cbd5e1; font-size: 1.05rem;">
-    I am a third-year Computer Science undergraduate at Manipal Institute of Technology, Bengaluru, with a strong focus on backend engineering, data-intensive systems, and applied machine learning.
-    I enjoy building production-grade software end to end—designing robust architectures, implementing efficient algorithms, and delivering systems with clear performance and reliability guarantees.
-    My recent work includes a universal NL-to-SQL engine that combines graph-based reasoning with deterministic fallbacks to reduce LLM hallucinations,
-    as well as implementing a GPT-2–style transformer from scratch to deeply understand model internals and training dynamics.
+    I am a third year Computer Science undergraduate at Manipal Institute of Technology, Bengaluru, focused on building scalable backend systems and applied LLM infrastructure.
+    My work centers on reliability and performance in AI-driven systems—combining deterministic programmatic logic with large language models to reduce hallucinations and improve execution guarantees.
+    Recently, I built an agentic Text-to-SQL engine evaluated on the Spider benchmark, achieving 68.7% execution accuracy through graph-based join validation and structured reasoning constraints.
+    I am particularly interested in ML systems, inference optimization, and architecting cost-efficient AI pipelines that operate reliably at enterprise scale.
   </p>
 </section>
 
@@ -153,43 +153,35 @@
 <section>
   <h2>Featured Projects</h2>
 
-    <div class="project">
-    <h3>Universal NL-to-SQL Engine with Graph RAG</h3>
-    <em>Python • LangChain • NetworkX • ChromaDB • Llama-3</em>
+  <div class="project">
+    <h3>Agentic Text-to-SQL Engine (Spider Benchmark)</h3>
+    <em>Python • LangGraph • NetworkX • ChromaDB • Llama-3</em>
     <ul>
-      <li>Engineered a reusable NL-to-SQL system with an LLM-assisted schema crawler to autonomously index unseen databases, scaling to schemas with 50+ tables.</li>
-      <li>Designed a hybrid Graph-RAG layer using NetworkX to enforce valid join paths via graph search and deterministic fallbacks, reducing SQL hallucinations by ~40% on complex multi-table queries.</li>
-      <li>Built a modular, production-grade ETL-to-inference pipeline with input validation and &lt;2s latency, resolving last-mile ambiguity through dynamic business-context injection from ChromaDB.</li>
+      <li>Architected a deterministic graph-based reasoning layer using NetworkX to compute valid join paths, reducing SQL hallucinations by ~40%.</li>
+      <li>Achieved 68.7% execution accuracy on the Spider 1.0 benchmark by combining structured schema constraints with Llama-3-8B inference.</li>
+      <li>Optimized cost and latency by matching baseline performance using an 8B model, avoiding the heavy compute overhead of 70B+ parameter alternatives.</li>
+      <li>Engineered an agentic schema crawler indexing 150+ databases with &lt;2s inference latency; currently scaling evaluation to 360+ table Snowflake-style enterprise schemas.</li>
     </ul>
     <a href="GITHUB_LINK_HERE" class="project-link" target="_blank">View Code &rarr;</a>
   </div>
 
-
   <div class="project">
-    <h3>LLM from Scratch (GPT-2 Style)</h3>
+    <h3>LLM from Scratch (GPT-2 Style, 117M Parameters)</h3>
     <em>PyTorch • Transformers • Python</em>
     <ul>
-      <li>Implemented a 117M-parameter GPT-2 style transformer with 12 layers and 12 attention heads.</li>
-      <li>Built the full training stack: BPE tokenizer, data pipeline, and training loop with AdamW.</li>
+      <li>Designed and implemented a 117M-parameter GPT-2 style transformer with 12 layers and 12 attention heads.</li>
+      <li>Built the complete training pipeline including BPE tokenizer, dataset preprocessing, and custom training loop with AdamW optimization.</li>
+      <li>Fine-tuned for spam classification by adapting the output head and selectively unfreezing transformer layers, achieving 95%+ validation accuracy.</li>
     </ul>
     <a href="https://github.com/SatyanarayanH/LLM-from-scratch" class="project-link" target="_blank">View Code &rarr;</a>
   </div>
 
   <div class="project">
-    <h3>Astrology RAG Agent</h3>
-    <em>LangGraph • ChromaDB • Groq</em>
+    <h3>Motor Failure Prediction (DRDO SRM)</h3>
+    <em>Scikit-learn • Pandas • RandomForestRegressor</em>
     <ul>
-      <li>Built a RAG agent for astrology queries by combining planetary data from Swiss Ephemeris with ChromaDB-based PDF retrieval.</li>
-      <li>Used LangGraph to orchestrate tool-calling with a Groq LLM backend.</li>
-    </ul>
-    <a href="https://github.com/SatyanarayanH/astroRAG" class="project-link" target="_blank">View Code &rarr;</a>
-  </div>
-
-  <div class="project">
-    <h3>Motor Failure Prediction (DRDO)</h3>
-    <em>Scikit-learn • Pandas • RandomForest</em>
-    <ul>
-      <li>Predicted Remaining Useful Life of solid rocket motors using sensor telemetry data.</li>
+      <li>Predicted Remaining Useful Life (RUL) of solid rocket motors using time-series sensor telemetry and regression modeling.</li>
+      <li>Performed temporal feature engineering and low-variance signal elimination to improve model robustness.</li>
       <li>Trained and evaluated a Random Forest Regressor, achieving an 11.5 MAE and improving baseline performance by 65% through piecewise target engineering.</li>
     </ul>
     <a href="https://github.com/SatyanarayanH/Motor-Remaining-Useful-Life-prediction" class="project-link" target="_blank">View Code &rarr;</a>
