@@ -29,6 +29,12 @@
       margin: 8px 0;
       font-size: 1.1rem;
     }
+    header .highlight {
+      color: #e2e8f0;
+      font-size: 1rem;
+      margin-top: 14px;
+    }
+    header .highlight b { color: #38bdf8; }
     header .links {
       margin-top: 1.5rem;
     }
@@ -40,7 +46,7 @@
       transition: color 0.2s;
     }
     header a:hover { color: #7dd3fc; }
-    
+
     section {
       max-width: 850px;
       margin: auto;
@@ -54,7 +60,9 @@
       margin-bottom: 20px;
       margin-top: 0;
     }
-    
+
+    .skill-cat { margin-bottom: 16px; }
+    .skill-cat strong { color: #f1f5f9; display: block; margin-bottom: 8px; font-size: 0.95rem; }
     .skills { display: flex; flex-wrap: wrap; gap: 10px; }
     .skills span {
       background: #1e293b;
@@ -65,39 +73,58 @@
       border: 1px solid #334155;
     }
 
-    .project {
+    .entry {
       background: #1e293b40;
       border: 1px solid #1e293b;
       padding: 1.5rem;
       margin-bottom: 1.5rem;
       border-radius: 12px;
     }
-    .project h3 {
-      margin: 0 0 8px 0;
+    .entry h3 {
+      margin: 0 0 4px 0;
       color: #f1f5f9;
       font-size: 1.25rem;
     }
-    .project em {
+    .entry .meta {
+      color: #94a3b8;
+      font-size: 0.9rem;
+      margin: 0 0 4px 0;
+    }
+    .entry em {
       color: #38bdf8;
       font-style: normal;
       font-size: 0.9rem;
       font-family: monospace;
+      display: block;
+      margin-bottom: 4px;
     }
-    .project ul {
+    .entry ul {
       padding-left: 20px;
       color: #cbd5e1;
       margin: 12px 0;
     }
-    .project ul li { margin-bottom: 6px; }
-    
+    .entry ul li { margin-bottom: 6px; }
+
+    .links-row { margin-top: 8px; }
     .project-link {
       display: inline-block;
-      margin-top: 8px;
+      margin-top: 4px;
+      margin-right: 16px;
       font-size: 0.9rem;
       color: #38bdf8;
       text-decoration: none;
     }
     .project-link:hover { text-decoration: underline; }
+
+    .pub {
+      background: linear-gradient(135deg, #1e293b55, #0c4a6e22);
+      border: 1px solid #0e7490;
+      padding: 1.5rem;
+      border-radius: 12px;
+    }
+    .pub h3 { margin: 0 0 6px 0; color: #f1f5f9; font-size: 1.2rem; }
+    .pub .cite { color: #94a3b8; font-size: 0.9rem; margin-bottom: 10px; }
+    .pub p { color: #cbd5e1; margin: 8px 0; }
 
     footer {
       text-align: center;
@@ -113,12 +140,14 @@
 
 <header>
   <h1>Satyanarayan H</h1>
-  <p>Software Engineer • CS Student at Manipal Institute of Technology</p>
+  <p>Software Engineer &amp; ML Researcher • CS @ Manipal Institute of Technology</p>
   <p>Bengaluru, India</p>
+  <p class="highlight">🏆 <b>#60</b> on the BIRD Text-to-SQL benchmark &nbsp;·&nbsp; 📄 <a href="https://doi.org/10.5281/zenodo.20685914" target="_blank" style="margin:0; text-decoration:underline;">Published preprint</a></p>
   <div class="links">
     <a href="mailto:satyanaraway@gmail.com">Email</a>
     <a href="https://www.linkedin.com/in/satyanarayan-h-125761245/" target="_blank">LinkedIn</a>
     <a href="https://github.com/SatyanarayanH" target="_blank">GitHub</a>
+    <a href="https://doi.org/10.5281/zenodo.20685914" target="_blank">Paper</a>
     <a href="https://leetcode.com/u/Chaos_Elyssianiq/" target="_blank">LeetCode</a>
   </div>
 </header>
@@ -126,57 +155,75 @@
 <section>
   <h2>About Me</h2>
   <p style="color: #cbd5e1; font-size: 1.05rem;">
-    I am a third year Computer Science undergraduate at Manipal Institute of Technology, Bengaluru, focused on building scalable backend systems and applied LLM infrastructure.
-    My work centers on reliability and performance in AI-driven systems—combining deterministic programmatic logic with large language models to reduce hallucinations and improve execution guarantees.
-    Recently, I built an agentic Text-to-SQL engine evaluated on the Spider benchmark, achieving 68.7% execution accuracy through graph-based join validation and structured reasoning constraints.
-    I am particularly interested in ML systems, inference optimization, and architecting cost-efficient AI pipelines that operate reliably at enterprise scale.
+    I'm a third-year Computer Science undergraduate at Manipal Institute of Technology, Bengaluru, focused on applied LLM systems and reliable, cost-efficient AI infrastructure.
+    My work centers on making language models produce correct, executable output - pairing deterministic programmatic logic (graph algorithms, schema constraints, execution validation) with LLMs to cut hallucinations and guarantee results.
+    My text-to-SQL system, <strong>Elysian-SQL</strong>, ranks <strong>#60 on the public BIRD benchmark</strong> (66.46% execution accuracy on the private test set) - built on an open-weight model, single-pass, with no fine-tuning, for under $0.50 per full run.
+    I've also shipped a production NL2SQL system end-to-end for a retail enterprise as the sole engineer.
+    I'm especially interested in ML systems, inference efficiency, and architecting AI pipelines that run reliably and cheaply at scale.
   </p>
 </section>
 
 <section>
-  <h2>Technical Skills</h2>
-  <div class="skills">
-    <span>C++</span>
-    <span>Python</span>
-    <span>Java</span>
-    <span>PyTorch</span>
-    <span>Transformers</span>
-    <span>LangChain</span>
-    <span>SQL</span>
-    <span>Docker</span>
-    <span>Git</span>
-    <span>MLOps</span>
-    <span>Data Structures & Algorithms</span>
+  <h2>Experience</h2>
+  <div class="entry">
+    <h3>Software Engineer - Independent Contract</h3>
+    <p class="meta">Indian Retail Chain (client under NDA) &nbsp;·&nbsp; Oct 2025 - March 2026 &nbsp;·&nbsp; Bengaluru (Remote)</p>
+    <ul>
+      <li>Designed, built, and deployed an <strong>LLM-powered NL2SQL system</strong> (Python, FastAPI, PostgreSQL, LangChain, gpt-oss-120b via Groq, NetworkX, Docker) letting store managers and analysts query sales, inventory, finance, customer, and logistics data in plain English - replacing a multi-day SQL-ticket workflow that previously bottlenecked through the data team.</li>
+      <li>Improved query-generation accuracy from <strong>68% to 91%</strong> on the client's internal evaluation via an LLM table router (schema pruning), a Steiner-tree join resolver (NetworkX) over the foreign-key graph to eliminate hallucinated joins, and an execution-aware validator that re-prompts on SQL errors.</li>
+      <li>Built secure query-execution APIs with an automated correction loop over a <strong>5M+ record</strong> production database and 25+ retail KPIs; cut analytics turnaround for business teams by <strong>~70%</strong>. Owned the project end-to-end as sole engineer.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Research &amp; Publications</h2>
+  <div class="pub">
+    <h3>Elysian-SQL: An Efficient Open-Model Pipeline for Text-to-SQL on BIRD</h3>
+    <p class="cite">Satyanarayan H · Independent Research · 2026 · Zenodo</p>
+    <p>
+      An eight-stage, single-pass text-to-SQL pipeline on an open-weight model (gpt-oss-120b), independently submitted to the BIRD benchmark.
+      Ranked <strong>#60 on the public BIRD Overall leaderboard</strong> - <strong>66.46% execution accuracy</strong> on the held-out private test set (1,789 questions), ahead of several systems built on substantially larger proprietary models such as GPT-4o, with no fine-tuning and a full test run costing ~$0.21.
+    </p>
+    <div class="links-row">
+      <a href="https://doi.org/10.5281/zenodo.20685914" class="project-link" target="_blank">Paper (DOI) &rarr;</a>
+      <a href="https://github.com/SatyanarayanH/nltosql-BIRD" class="project-link" target="_blank">Code &rarr;</a>
+      <a href="https://bird-bench.github.io/" class="project-link" target="_blank">Leaderboard &rarr;</a>
+    </div>
   </div>
 </section>
 
 <section>
   <h2>Featured Projects</h2>
 
-  <div class="project">
-    <h3>Agentic Text-to-SQL Engine (Spider Benchmark)</h3>
-    <em>Python • LangGraph • NetworkX • ChromaDB • Llama-3</em>
+  <div class="entry">
+    <h3>Elysian-SQL - Text-to-SQL on the BIRD Benchmark</h3>
+    <em>Python • LangChain • NetworkX • gpt-oss-120b • Docker</em>
+    <p class="meta">March 2026 - June 2026</p>
     <ul>
-      <li>Architected a deterministic graph-based reasoning layer using NetworkX to compute valid join paths, reducing SQL hallucinations by ~40%.</li>
-      <li>Achieved 68.7% execution accuracy on the Spider 1.0 benchmark by combining structured schema constraints with Llama-3-8B inference.</li>
-      <li>Optimized cost and latency by matching baseline performance using an 8B model, avoiding the heavy compute overhead of 70B+ parameter alternatives.</li>
-      <li>Engineered an agentic schema crawler indexing 150+ databases with &lt;2s inference latency; currently scaling evaluation to 360+ table Snowflake-style enterprise schemas.</li>
+      <li>Engineered an <strong>eight-stage single-pass pipeline</strong>: LLM schema linker, BM25 few-shot retrieval, a graph-based Steiner-tree join resolver (NetworkX) over the foreign-key graph, value grounding for WHERE-clause literals, and a cascading execution-aware self-correction loop.</li>
+      <li>Ranked <strong>#60 on the public BIRD Overall leaderboard</strong> - 66.46% execution accuracy on the private test set, +16.8 pp over a strong same-model baseline on dev - beating several GPT-4o-based systems.</li>
+      <li>Built entirely on an <strong>open-weight model</strong>, single-pass, no fine-tuning, no GPU; a full private-test run cost <strong>~$0.21</strong>.</li>
+      <li>Released as a published preprint (Zenodo DOI) with a fully reproducible open-source bundle.</li>
     </ul>
-    <a href="GITHUB_LINK_HERE" class="project-link" target="_blank">View Code &rarr;</a>
+    <div class="links-row">
+      <a href="https://github.com/SatyanarayanH/nltosql-BIRD" class="project-link" target="_blank">View Code &rarr;</a>
+      <a href="https://doi.org/10.5281/zenodo.20685914" class="project-link" target="_blank">Read Paper &rarr;</a>
+    </div>
   </div>
 
-  <div class="project">
+  <div class="entry">
     <h3>LLM from Scratch (GPT-2 Style, 117M Parameters)</h3>
     <em>PyTorch • Transformers • Python</em>
+    <p class="meta">May 2025 - July 2025</p>
     <ul>
-      <li>Designed and implemented a 117M-parameter GPT-2 style transformer with 12 layers and 12 attention heads.</li>
-      <li>Built the complete training pipeline including BPE tokenizer, dataset preprocessing, and custom training loop with AdamW optimization.</li>
-      <li>Fine-tuned for spam classification by adapting the output head and selectively unfreezing transformer layers, achieving 95%+ validation accuracy.</li>
+      <li>Implemented a 117M-parameter decoder-only transformer end-to-end (12 layers, 12 attention heads) with a BPE tokenizer, multi-head self-attention, and a custom AdamW training loop - no high-level libraries.</li>
+      <li>Fine-tuned for spam classification by replacing the output head and selectively unfreezing the final transformer block, achieving <strong>&gt;95% validation accuracy</strong>.</li>
     </ul>
     <a href="https://github.com/SatyanarayanH/LLM-from-scratch" class="project-link" target="_blank">View Code &rarr;</a>
   </div>
 
-  <div class="project">
+  <div class="entry">
     <h3>Motor Failure Prediction (DRDO SRM)</h3>
     <em>Scikit-learn • Pandas • RandomForestRegressor</em>
     <ul>
@@ -190,23 +237,57 @@
 </section>
 
 <section>
-  <h2>Achievements</h2>
-  <ul style="color: #cbd5e1; line-height: 1.8;">
-    <li><strong>Goldman Sachs India CODE Challenge 2025:</strong> Ranked 602 (CS)</li>
-    <li><strong>Certifications:</strong> DeepLearning.AI Machine Learning Specialization, Google LLMs & Neural Networks</li>
-  </ul>
+  <h2>Technical Skills</h2>
+  <div class="skill-cat">
+    <strong>Languages</strong>
+    <div class="skills">
+      <span>Python</span><span>C++</span><span>Java</span><span>C</span><span>JavaScript / TypeScript</span><span>SQL (MySQL, PostgreSQL)</span><span>Bash</span>
+    </div>
+  </div>
+  <div class="skill-cat">
+    <strong>Backend &amp; Systems</strong>
+    <div class="skills">
+      <span>FastAPI</span><span>Flask</span><span>REST APIs</span><span>Redis</span><span>Docker</span><span>Docker Compose</span><span>Linux</span>
+    </div>
+  </div>
+  <div class="skill-cat">
+    <strong>Frontend</strong>
+    <div class="skills">
+      <span>React</span><span>Next.js</span><span>Tailwind CSS</span>
+    </div>
+  </div>
+  <div class="skill-cat">
+    <strong>ML &amp; AI</strong>
+    <div class="skills">
+      <span>PyTorch</span><span>Transformers</span><span>LangChain</span><span>LangGraph</span><span>Scikit-learn</span><span>Pandas</span><span>NumPy</span>
+    </div>
+  </div>
+  <div class="skill-cat">
+    <strong>Data &amp; Retrieval</strong>
+    <div class="skills">
+      <span>ChromaDB</span><span>Vector Databases</span><span>NetworkX</span><span>SQL Query Optimization</span>
+    </div>
+  </div>
+  <div class="skill-cat">
+    <strong>DevOps &amp; Tools</strong>
+    <div class="skills">
+      <span>Git</span><span>GitHub Actions (CI/CD)</span><span>pytest</span><span>Locust (load testing)</span><span>Railway / Fly.io</span>
+    </div>
+  </div>
 </section>
 
 <section>
-  <h2>Extracurricular</h2>
-  <p style="color: #cbd5e1;">
-    Represented my school in athletics, football, and badminton at inter-school competitions.
-    Sports have helped me develop discipline, teamwork, and resilience—qualities I bring into engineering work.
-  </p>
+  <h2>Achievements</h2>
+  <ul style="color: #cbd5e1; line-height: 1.8;">
+    <li><strong>Published preprint + #60 on the BIRD Text-to-SQL leaderboard</strong> - independent research (2026).</li>
+    <li><strong>LeetCode Weekly Contest:</strong> Rank 79 / ~30,000 (Top 0.3%) - solved 4/4 problems within contest time.</li>
+    <li><strong>Goldman Sachs India CODE Challenge 2025:</strong> CS Rank 602.</li>
+    <li>Represented Manipal Institute of Technology, Bengaluru in inter-college track &amp; field competitions.</li>
+  </ul>
 </section>
 
 <footer>
-  &copy; 2025 Satyanarayan H • Hosted on GitHub Pages
+  &copy; 2026 Satyanarayan H • Hosted on GitHub Pages
 </footer>
 
 </body>
